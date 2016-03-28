@@ -1,0 +1,17 @@
+<% @page_title = "UserAuth | Signup" %>
+<div class="Sign_Form">
+  <h1>Registracija</h1>
+  <%= form_for(@user) do |f| %>
+    <p> Email:</br> <%= f.text_field :email%> </p>
+    <p> Password:</br> <%= f.password_field :password%></p>
+    <p> Repeat password:</br> <%= f.password_field :password_confirmation%> </p>
+    <%= f.submit :"Sign Up" %>
+  <% end %>
+  <% if @user.errors.any? %>
+    <ul class="Signup_Errors">
+    <% for message_error in @user.errors.full_messages %>
+      <li>* <%= message_error %></li>
+    <% end %>
+    </ul>
+  <% end %>
+</div>
