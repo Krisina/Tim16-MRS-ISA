@@ -3,13 +3,15 @@ Rails.application.routes.draw do
   get 'sessions/login_attempt'
   get 'sessions/login'
   get 'sessions/home'
-  get 'sessions/profile'
+  # get 'sessions/profile'
   get 'sessions/setting'
   get 'sessions/signup'
   get 'welcome/index'
   get 'users/new'
+  get 'restaurants/new'
 
   resources :users
+  resources :restaurants
 
   root 'welcome#index'
   
@@ -18,10 +20,11 @@ Rails.application.routes.draw do
   get ':controller(/:action(/:id(.:format)))'
   match '/about', to: 'home#about', via: 'get'
   match '/signup', to: 'users#new', via: 'get'
+  match '/addrestaurants', to: 'restaurants#new', via: 'get'
   match '/login', to: 'sessions#login', via: 'get'
   match '/logout', to: 'sessions#logout', via: 'get'
   match '/main', to: 'sessions#main', via: 'get'
-  match '/profile', to: 'sessions#profile', via: 'get'
+  # match '/profile', to: 'sessions#profile', via: 'get'
   match '/setting', to: 'sessions#setting', via: 'get'
   match '/home', to: 'sessions#home', via: 'get'
   

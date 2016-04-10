@@ -1,1 +1,62 @@
-<h2 class='User_Header'><%=@current_user.email%> Home <h2>
+<style>
+.img {
+	width: 150px;
+	height: 150px;
+    border: 1px solid black;
+    margin: 5px;
+}
+
+textarea {
+    height: 28px;
+    width: 400px;
+}
+
+#textarea {
+    -moz-appearance: textfield-multiline;
+    -webkit-appearance: textarea;
+    border: 1px solid gray;
+    font: medium -moz-fixed;
+    font: -webkit-small-control;
+    height: 28px;
+    overflow: auto;
+    padding: 2px;
+    resize: both;
+    width: 400px;
+}
+
+input {
+    margin-top: 5px;
+    width: 300px;
+}
+
+#input {
+    -moz-appearance: textfield;
+    -webkit-appearance: textfield;
+    background-color: white;
+    background-color: -moz-field;
+    border: 1px solid darkgray;
+    box-shadow: 1px 1px 1px 0 lightgray inset;  
+    font: -moz-field;
+    font: -webkit-small-control;
+    margin-top: 5px;
+    padding: 2px 3px;
+    position: relative;
+
+    width: 300px;
+    height: 20px;  
+}
+
+</style>
+
+<html>
+<body>
+
+<div class="img">
+  <img src="restoLogo.jpg">
+</div>
+
+<div id="input" contenteditable></div>
+<div id="input" contenteditable></div>
+
+</body>
+</html>

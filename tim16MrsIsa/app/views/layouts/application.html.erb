@@ -1,3 +1,15 @@
+	<style>
+	table.table1{
+		border: 1px solid black;
+		padding: 5px;
+		
+	}
+	th.th3{
+		text-align: left;
+		width:90%;
+	}	
+</style>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -14,13 +26,13 @@
 							
 			</ul>
 		<%else%>
-			<ul class="nav">
-				<li><%= link_to :Home , :home, class: "nav_links" %> |</li>
-				<li><%= link_to :Profile , :profile, class: "nav_links" %> |</li>
-				<li><%= link_to :Setting , :setting, class: "nav_links" %> |</li>
-				<li><%= link_to :Logout , :logout, class: "nav_links" %></li>	
-				<li><%= link_to :Users , :users, class: "nav_links"%></li>	
-			</ul>
+			<table class="table1">
+				<th class="th3"><%= link_to :"Moj Nalog" , :home, class: "nav_links" %> |
+				<%= link_to :"Prijatelji" , :users, class: "nav_links"%> |
+				<%= link_to :"Restorani" , :restaurants, class: "nav_links"%></th>
+				<th class="th3"><%= link_to :"Dodaj Restoran" , :setting, class: "nav_links" %></th>	
+				<th class="th3"><%= link_to :Logout , :logout, class: "nav_links" %></th>	
+			</table>
 		<%end%>
 	</div>
 	<% if flash[:color]== "valid" %>

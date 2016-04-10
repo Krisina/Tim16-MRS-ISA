@@ -7,12 +7,13 @@ class SessionsController < ApplicationController
 		#Home Page
 	end
 
-	def profile
+	#def profile
 		#Profile Page
-	end
+	#end
 
 	def setting
 		#Setting Page
+		redirect_to(:controller => 'restaurants', :action => 'new')
 	end
 
 	def login
