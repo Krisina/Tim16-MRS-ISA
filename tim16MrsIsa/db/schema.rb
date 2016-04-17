@@ -11,7 +11,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160417080834) do
+ActiveRecord::Schema.define(version: 20160417113153) do
+
+  create_table "friendships", force: :cascade do |t|
+    t.integer  "friendable_id"
+    t.string   "friendable_type"
+    t.integer  "friend_id"
+    t.integer  "status"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "blocker_id"
+  end
+
+  add_index "friendships", ["status"], name: "index_friendships_on_status"
 
   create_table "restaurants", force: :cascade do |t|
     t.text     "name"

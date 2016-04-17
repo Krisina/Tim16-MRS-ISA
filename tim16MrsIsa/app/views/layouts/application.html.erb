@@ -13,7 +13,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>RubySource User Auth</title>
+  <title>Restoran</title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
@@ -28,7 +28,7 @@
 		<%else%>
 			<table class="table1">
 				<th class="th3"><%= link_to :"Moj Nalog" , :home, class: "nav_links" %> |
-				<%= link_to :"Prijatelji" , :users, class: "nav_links"%> |
+				<%= link_to :"Korisnici" , :users, class: "nav_links"%> |
 				<%= link_to :"Restorani" , :restaurants, class: "nav_links"%></th>
 				<th class="th3"><%= link_to :"Dodaj Restoran" , :setting, class: "nav_links" %></th>	
 				<th class="th3"><%= link_to :Logout , :logout, class: "nav_links" %></th>	
