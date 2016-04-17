@@ -7,9 +7,9 @@ class SessionsController < ApplicationController
 		#Home Page
 	end
 
-	#def profile
+	def profile
 		#Profile Page
-	#end
+	end
 
 	def setting
 		#Setting Page
@@ -24,7 +24,7 @@ class SessionsController < ApplicationController
 		authorized_user = User.authenticate(params[:email],params[:login_password])
 		if authorized_user
 			session[:user_id] = authorized_user.id
-			flash[:notice] = "Wow Welcome again, you logged in as #{authorized_user.email}"
+			flash[:notice] = "Welcome again, #{authorized_user.ime} #{authorized_user.prezime}!"
 			redirect_to(:action => 'home')
 
 

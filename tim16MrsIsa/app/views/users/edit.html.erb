@@ -20,8 +20,8 @@
 
 <% @page_title = "UserAuth | Signup" %>
 <div class="Sign_Form">
-  <h1>Registracija</h1>
-  <%= form_for(@user) do |f| %>
+  <h1 class = "h5">Editovanje Naloga</h1>
+  <%= form_for :user, url: user_path(@user), method: :patch do |f| %>
 	<table class="table4">
 	<tr><th class="th1"> Email: </th><th><%= f.text_field :email%></th></tr>
     <tr><th class="th1"> Password: </th><th><%= f.password_field :password%></th></tr>
@@ -30,7 +30,9 @@
 	<tr><th class="th1"> Prezime: </th><th><%= f.text_field :prezime%></th></tr>
 	<tr><th class="th1"> Adresa: </th><th><%= f.text_field :adresa%></th></tr>
 	</table>
-    <div align="left"><%= f.submit :"Sign Up" %></div>
+
+	<div align="left"><%= f.submit :"Edit" %></div>
+
   <% end %>
   <% if @user.errors.any? %>
     <ul class="Signup_Errors">

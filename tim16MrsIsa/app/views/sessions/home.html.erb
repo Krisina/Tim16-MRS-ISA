@@ -1,67 +1,55 @@
 <style>
-.img {
-	width: 150px;
-	height: 150px;
+	table.table4{
+		border: 1px solid black;
+		border-collapse: separate;
+		border-spacing: 5px 5px;
+		margin: 5px;
+		border-radius: 8px;
+	}
+	tr:nth-child(even) {background-color: #f2f2f2}
+	tr:hover {background-color: #f5f5f5}
+	
+	th.th1 {
+		font-style: bold;
+		font-size: 1.3em;
+		
+	}
+	
+	.img {
+	max-width: 100%;
+    height: auto;
+	height: 125px;
     border: 1px solid black;
     margin: 5px;
-}
+	float: left;
 
-textarea {
-    height: 28px;
-    width: 400px;
 }
-
-#textarea {
-    -moz-appearance: textfield-multiline;
-    -webkit-appearance: textarea;
-    border: 1px solid gray;
-    font: medium -moz-fixed;
-    font: -webkit-small-control;
-    height: 28px;
-    overflow: auto;
-    padding: 2px;
-    resize: both;
-    width: 400px;
 	
-	top: 6%;
-	left: 2%;
-}
-
-input {
-    margin-top: 5px;
-    width: 300px;
-}
-
-#input {
-    -moz-appearance: textfield;
-    -webkit-appearance: textfield;
-    background-color: white;
-    background-color: -moz-field;
-    border: 1px solid darkgray;
-    box-shadow: 1px 1px 1px 0 lightgray inset;  
-    font: -moz-field;
-    font: -webkit-small-control;
-    margin-top: 5px;
-    padding: 2px 3px;
-    position: relative;
-
-    width: 300px;
-    height: 20px;  
-}
-
 </style>
 
-<html>
-<body>
 
 <div class="img">
-  <img src="restoLogo.jpg">
+  <%= image_tag("Profile_avatar_placeholder_large.jpg") %>
 </div>
 
-Ime i prezime: <div id="input" contenteditable></div>
-Adresa: <div id="input" contenteditable></div>
-Broj Poseta:
+<table class="table4">
+<tr>
+<th class="th1"> E-mail: <th>
+<th><%=@current_user.email%></th> 
+</tr>
+<tr>
+<th class="th1"> Ime: <th>
+<th><%=@current_user.ime%><th>
+</tr>
+<tr>
+<th class="th1"> Prezime: <th>
+<th><%=@current_user.prezime%><th>
+</tr>
+<tr>
+<th class="th1"> Adresa: <th>
+<th><%=@current_user.adresa%><th>
+</tr>
+</table>
 
+<%= link_to 'Edituj Nalog', edit_user_path(@current_user)%>
 
-</body>
-</html>

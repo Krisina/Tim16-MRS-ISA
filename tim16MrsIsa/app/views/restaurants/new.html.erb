@@ -1,13 +1,35 @@
+<style>
+	table.table4{
+		border: 1px solid black;
+		border-collapse: separate;
+		border-spacing: 5px 5px;
+		margin: 5px;
+		border-radius: 8px;
+		
+	}
+
+	tr:nth-child(even) {background-color: #f2f2f2}
+	tr:hover {background-color: #f5f5f5}
+	
+	th.th1 {
+		font-style: bold;
+		font-size: 1.3em;
+		
+	}	
+</style>
+
 <% @page_title = "Add Restaurant" %>
 <div class="Sign_Form">
   <h1>Restorani</h1>
   <%= form_for (@restaurant) do |f| %>
-	<p>Ime Restorana:</br><%= f.text_field :name %></p>
-	<p>Udaljenost:</br><%= f.text_field :distance %></p>
-	<p>Rejting:</br><%= f.text_field :rating %></p>
-	<p>Prijatelji:</br><%= f.text_field :friends %></p>
-	<p>Rezervacija:</br><%= f.text_field :reservation %></p>
-	<%= f.submit :"Add" %>
+	<table class="table4">
+	<tr><th class="th1"> Ime Restorana: </th><th><%= f.text_field :name %></th></tr>
+	<tr><th class="th1">Udaljenost: </th><th><%= f.text_field :distance %></th></tr>
+	<tr><th class="th1">Rejting: </th><th><%= f.text_field :rating %></th></tr>
+	<tr><th class="th1">Prijatelji: </th><th><%= f.text_field :friends %></th></tr>
+	<tr><th class="th1">Rezervacija: </th><th><%= f.text_field :reservation %></th></tr>
+	</table>
+	<div align="left"><%= f.submit :"Add" %></div>
   <% end %>
   <% if @restaurant.errors.any? %>
     <ul class="Signup_Errors">

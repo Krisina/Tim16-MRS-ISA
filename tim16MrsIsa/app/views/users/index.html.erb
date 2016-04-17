@@ -15,11 +15,18 @@
 <table class="table3">
   <tr>
     <th class="th2">E-mail</th>
+	<th class="th2">Ime</th>
+	<th class="th2">Prezime</th>
+	<th class="th2">Adresa</th>
   </tr>
  
   <% @user.each do |users| %>
     <tr>
       <td><%= users.email %></td>
+	  <td><%= users.ime %></td>
+	  <td><%= users.prezime %></td>
+	  <td><%= users.adresa %></td>
+	  <td><%= link_to 'Edit', edit_user_path(users)%></td>
     </tr>
   <% end %>
 </table>

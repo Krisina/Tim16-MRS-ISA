@@ -12,7 +12,7 @@ class UsersController < ApplicationController
   
   def show
     redirect_to(:controller => 'sessions', :action => 'login')
-	flash[:notice] = "You Signed up successfully"
+	flash[:notice] = "Successful!"
 	flash[:color]= "valid"
   end
   
@@ -45,6 +45,6 @@ class UsersController < ApplicationController
     end
   private
   def user_params
-    params.require(:user).permit(:email, :password, :password_confirmation)
+    params.require(:user).permit(:email, :password, :password_confirmation, :ime, :prezime, :adresa)
   end
 end

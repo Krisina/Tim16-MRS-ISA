@@ -5,6 +5,9 @@ class User < ActiveRecord::Base
   after_save :clear_password
 
   EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/
+  validates :ime, :presence => true
+  validates :prezime, :presence => true
+  validates :adresa, :presence => true
   validates :email, :presence => true, :uniqueness => true, :format => EMAIL_REGEX
   validates :password, :presence => true, length: { minimum: 6 }, :confirmation => true
   #Only on Create so other actions like update password attribute can be nil
