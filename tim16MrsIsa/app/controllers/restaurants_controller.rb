@@ -11,7 +11,7 @@ class RestaurantsController < ApplicationController
 	
   def show
     redirect_to(:controller => 'sessions', :action => 'home')
-	flash[:notice] = "You Added a new Restaurant successfully"
+	flash[:notice] = "Successful"
 	flash[:color]= "valid"
   end
   

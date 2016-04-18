@@ -22,18 +22,6 @@ ActiveRecord::Schema.define(version: 20160418074144) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "friendships", force: :cascade do |t|
-    t.integer  "friendable_id"
-    t.string   "friendable_type"
-    t.integer  "friend_id"
-    t.integer  "status"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.integer  "blocker_id"
-  end
-
-  add_index "friendships", ["status"], name: "index_friendships_on_status"
-
   create_table "restaurants", force: :cascade do |t|
     t.text     "name"
     t.text     "distance"
