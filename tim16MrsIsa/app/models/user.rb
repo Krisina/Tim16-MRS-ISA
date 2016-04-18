@@ -1,5 +1,4 @@
 class User < ActiveRecord::Base
- # has_friendship
   attr_accessor :password
 
   before_save :encrypt_password

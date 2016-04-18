@@ -11,7 +11,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160417113153) do
+ActiveRecord::Schema.define(version: 20160418074144) do
+
+  create_table "friends", force: :cascade do |t|
+    t.string   "email"
+    t.string   "ime"
+    t.string   "prezime"
+    t.string   "adresa"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "friendships", force: :cascade do |t|
     t.integer  "friendable_id"
