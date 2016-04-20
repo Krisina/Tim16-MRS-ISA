@@ -1,44 +1,23 @@
-<style>
-	table.table4{
-		border: 1px solid black;
-		border-collapse: separate;
-		border-spacing: 5px 5px;
-		margin: 5px;
-		border-radius: 8px;
+<div class="register-form">
+	<div class="form">
+		<h1>Editovanje Naloga</h1>
+		<%= form_for :user, url: user_path(@user), method: :patch do |f| %>
+			<%= f.text_field :email, :placeholder => "e-mail"%>
+			<%= f.password_field :password, :placeholder => "password"%>
+			<%= f.password_field :password_confirmation, :placeholder => "password confirmation"%>
+			<%= f.text_field :ime, :placeholder => "ime"%>
+			<%= f.text_field :prezime, :placeholder => "prezime"%>
+			<%= f.text_field :adresa, :placeholder => "adresa"%>
+			<%= f.submit :"Edit" %>
+		<% end %>
+		<% if @user.errors.any? %>
+			<div class="alert-box error"><span>error: </span>
+				<i class="fa fa-times-circle"></i>
+				<% for message_error in @user.errors.full_messages %>
+					<li><%= image_tag("error.png") %><%= message_error %></li>
+				<% end %>
+			</div>
+		<% end %>
 		
-	}
-
-	tr:nth-child(even) {background-color: #f2f2f2}
-	tr:hover {background-color: #f5f5f5}
-	
-	th.th1 {
-		font-style: bold;
-		font-size: 1.3em;
-		
-	}	
-</style>
-
-<% @page_title = "UserAuth | Signup" %>
-<div class="Sign_Form">
-  <h1 class = "h5">Editovanje Naloga</h1>
-  <%= form_for :user, url: user_path(@user), method: :patch do |f| %>
-	<table class="table4">
-	<tr><th class="th1"> Email: </th><th><%= f.text_field :email%></th></tr>
-    <tr><th class="th1"> Password: </th><th><%= f.password_field :password%></th></tr>
-    <tr><th class="th1"> Repeat password: </th><th><%= f.password_field :password_confirmation%></th></tr>
-	<tr><th class="th1"> Ime: </th><th><%= f.text_field :ime%></th></tr>
-	<tr><th class="th1"> Prezime: </th><th><%= f.text_field :prezime%></th></tr>
-	<tr><th class="th1"> Adresa: </th><th><%= f.text_field :adresa%></th></tr>
-	</table>
-
-	<div align="left"><%= f.submit :"Edit" %></div>
-
-  <% end %>
-  <% if @user.errors.any? %>
-    <ul class="Signup_Errors">
-    <% for message_error in @user.errors.full_messages %>
-      <li>* <%= message_error %></li>
-    <% end %>
-    </ul>
-  <% end %>
+	</div>
 </div>

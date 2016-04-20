@@ -1,13 +1,5 @@
-	<style>
-	table.table1{
-		border: 1px solid black;
-		padding: 5px;
-		
-	}
-	th.th3{
-		text-align: left;
-		width:90%;
-	}	
+<style>
+
 </style>
 
 <!DOCTYPE html>
@@ -18,23 +10,40 @@
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
-<body>
-	<div class="Main_Header">
+<body class="header_body">
 
-		<%unless session[:user_id]%>
-			<ul class="nav">
-							
-			</ul>
-		<%else%>
-			<table class="table1">
-				<th class="th3"><%= link_to :"Moj Nalog" , :home, class: "nav_links" %> |
+	<div class="header">
+		<div class="container">
+			<div class="logo">
+				<h1 class="title"><%= image_tag("forkknife.png", size: "60x43") %>
+				Rezervisemo</h1>
+			</div>
+			<%unless session[:user_id]%>
+				<div class="nav">
+					<%= link_to :"Login" , :home, class: "nav_links" %> |
+					<%= link_to :"Korisnici" , :users, class: "nav_links"%> |
+					<%= link_to :"Restorani" , :restaurants, class: "nav_links"%>		
+				</div>
+			<%else%>
+				<div class="nav">
+				<%= link_to :"Moj Nalog" , :home, class: "nav_links" %> |
 				<%= link_to :"Korisnici" , :users, class: "nav_links"%> |
-				<%= link_to :"Restorani" , :restaurants, class: "nav_links"%></th>
-				<th class="th3"><%= link_to :"Dodaj Restoran" , :setting, class: "nav_links" %></th>	
-				<th class="th3"><%= link_to :Logout , :logout, class: "nav_links" %></th>	
-			</table>
-		<%end%>
+				<%= link_to :"Restorani" , :restaurants, class: "nav_links"%> |
+				<div class="dropdown">
+					<span>Podesavanja</span>
+					<div class="dropdown-content">
+						<%= link_to :"Korisnici" , :users, class: "nav_links"%>
+						<br><%= link_to :"Restorani" , :restaurants, class: "nav_links"%>
+						<br><%= link_to :"Dodaj Restoran" , :setting, class: "nav_links" %>	
+					</div>
+				</div>
+				| <%= link_to :Logout , :logout, class: "nav_links" %>
+			</div>
+			<%end%>
+		</div>
 	</div>
+
+
 	<% if flash[:color]== "valid" %>
 		<div class="valid_notice">
 			<p><%= flash[:notice]%></p>

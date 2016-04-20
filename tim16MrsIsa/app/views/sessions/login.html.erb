@@ -1,22 +1,11 @@
-<style>
-	body {
-		margin-top: 100px;
-		text-align: center;
-		font-size:20px;
-	    font-family:Ariel;
-	}	
-</style>
-
-<% @page_title = "UserAuth | Login" -%>
-<%= image_tag("restoLogo.jpg") %>
-<div class= "Sign_Form">
-	<%= form_tag(:action => 'login_attempt') do %>
-		<p>Email:</br> <%= text_field_tag(:email) %></p> 
-		
-		<p>Password:</br> <%= password_field_tag :login_password %></p> 
-
-		<%= submit_tag("Log In") %>
-		<button type="button" class="btn btn-default btn-lg"><%= link_to :"Sign Up" , :signup, class: "nav_links"%></button>
-		
-	<% end %>
+<div class="login-page">
+	<div class="form">
+		<h1 align="left">Login</h1>
+		<%= form_tag(:action => 'login_attempt') do %>
+			<input type="username" placeholder="username"<%= text_field_tag(:email) %>		
+			<input type="password" placeholder="password"<%= password_field_tag :login_password %>
+			<%= submit_tag("Log In") %>
+			<p class="message">Niste registrovani? <%= link_to :"Kreiraj nalog" , :signup, class: "nav_links"%></p>
+		<% end %>
+	</div>
 </div>

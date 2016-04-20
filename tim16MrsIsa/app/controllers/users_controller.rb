@@ -3,6 +3,12 @@ class UsersController < ApplicationController
 
   def index
     @user = User.all
+	
+	#@user = @user.search(params[:search])
+	
+	@user = User.where(params[:id]) if params[:id].present?
+	@user = @user.search(params[:search]) if params[:search].present?
+
   end
   
   def new
@@ -18,6 +24,7 @@ class UsersController < ApplicationController
   
   def edit
     @user = User.find(params[:id])
+
   end
   
   def update

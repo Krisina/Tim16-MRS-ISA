@@ -14,6 +14,14 @@ class User < ActiveRecord::Base
 
   #attr_accessible :username, :email, :password, :password_confirmation
 
+  def self.search(search)
+	if search
+		User.where('ime LIKE :query OR prezime LIKE :query', query: "%#{search}%")
+	else
+		find(:all)
+	end
+  end
+  
   def self.authenticate(email="", login_password="")
 
     if  EMAIL_REGEX.match(email)    

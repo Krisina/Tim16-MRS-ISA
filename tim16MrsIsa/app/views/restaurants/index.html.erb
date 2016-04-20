@@ -1,24 +1,4 @@
-<style>
-	/* Sortable tables */
-	
-	table.sortable thead {
-    border: 1px solid black;
-	border-collapse: separate;
-	border-spacing: 5px 5px;
-    cursor: default;
-	}
-	table.sortable th:not(.sorttable_sorted):not(.sorttable_sorted_reverse):not(.sorttable_nosort):after { 
-    content: " \25B4\25BE" 
-	}	
-	tr.tr1:nth-child(even) {background-color: #f2f2f2}
-	
-	th.th1 {
-		background-color: #bdbdbd;
-		
-	}
-</style>
- 
-<table class="sortable">
+<table class="flat-table sortable">
   <thead>
   <tr class="tr1">
     <th class="th1">Ime Restorana  </th>
@@ -32,12 +12,12 @@
   <tbody>
   <% @restaurant.each do |restaurants| %>
     <tr class="tr1">
-      <td><%= restaurants.name %></td>
-	  <td><%= restaurants.distance %></td>
-	  <td><%= restaurants.rating %></td>
-	  <td><%= restaurants.friends %></td>
-	  <td><%= restaurants.reservation %></td>
-	  <td><%= link_to 'Edit', edit_restaurant_path(restaurants)%></td>
+      <td class="td1"><%= restaurants.name %></td>
+	  <td class="td1"><%= restaurants.distance %></td>
+	  <td class="td1"><%= restaurants.rating %></td>
+	  <td class="td1"><%= restaurants.friends %></td>
+	  <td class="td1"><%= restaurants.reservation %></td>
+	  <td class="tdeditresto"><%= link_to 'Edit', edit_restaurant_path(restaurants)%></td>
     </tr>
   <% end %>
   </tbody>
