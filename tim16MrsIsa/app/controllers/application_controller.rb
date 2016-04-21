@@ -1,6 +1,10 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
   protected
+  def current_user
+    return unless session[:user_id]
+    @current_user ||= User.find(session[:user_id])
+  end
   def authenticate_user
   	unless session[:user_id]
   		redirect_to(:controller => 'sessions', :action => 'login')

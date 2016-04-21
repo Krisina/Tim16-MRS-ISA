@@ -17,21 +17,18 @@ class UsersController < ApplicationController
   end
   
   def show
-    redirect_to(:controller => 'sessions', :action => 'login')
-	flash[:notice] = "Successful!"
-	flash[:color]= "valid"
+	@user = current_user
   end
   
   def edit
     @user = User.find(params[:id])
-
   end
   
   def update
 	@user = User.find(params[:id])
  
 	if @user.update(user_params)
-		redirect_to @user
+		redirect_to(:controller => 'sessions', :action => 'login')
 	else
 		render 'edit'
 	end
@@ -41,7 +38,9 @@ class UsersController < ApplicationController
     	@user = User.new(user_params)
     	if @user.save
 
-			redirect_to(:action => 'login')
+			    redirect_to(:controller => 'sessions', :action => 'login')
+				flash[:notice] = "Successful!"
+				flash[:color]= "valid"
 		else
 			flash[:notice] = "Form is invalid"
 			flash[:color]= "invalid"
@@ -49,6 +48,13 @@ class UsersController < ApplicationController
 		end	
 		
     end
+	
+	#def destroy
+    #	@user = User.find(params[:id])
+	#	@friendship.destroy
+	#	flash[:notice] = "The user has been removed."
+	#	redirect_to @user
+    #end
   private
   def user_params
     params.require(:user).permit(:email, :password, :password_confirmation, :ime, :prezime, :adresa)

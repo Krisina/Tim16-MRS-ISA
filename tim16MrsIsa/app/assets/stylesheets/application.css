@@ -10,7 +10,6 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
- *= require_tree .
  *= require_self
  */
 
@@ -284,8 +283,11 @@
 		background-size:     cover;                 
 		background-repeat:   no-repeat;
 		background-position: center center;  	
+
 	
 	}
+	
+	
 	
 	body.header_body {
 		
@@ -357,6 +359,20 @@ a:active { color: white; text-decoration: none ;z-index: 1;}
 
 td.tdeditkor:nth-child(5) { background-color: rgb(112, 196, 105); padding: 20px 30px;}
 td.tdeditresto:nth-child(6) { background-color: rgb(112, 196, 105); padding: 20px 30px;}
+
+td.tdfoot{ 
+	background-color: rgb(112, 196, 105); 
+	padding: 20px 30px; 
+}
+caption{ 
+	font-family: "Roboto", sans-serif;
+	-webkit-font-smoothing: antialiased;
+	font-size: 115%;
+	background-color: rgb(112, 196, 105); 
+	padding: 20px 30px; 
+	color: white;
+}
+
 
 
 	

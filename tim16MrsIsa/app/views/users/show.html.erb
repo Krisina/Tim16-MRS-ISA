@@ -1,19 +1,50 @@
-<p>
-  <strong>E-mail:</strong>
-  <%= @user.email %>
-</p>
- 
-<p>
-  <strong>Ime:</strong>
-  <%= @user.ime %>
-</p>
+<table class="flat-table sortable">
+	 <caption>Friend List</caption>
+  <thead>
+    <tr>
+      <th>E-mail</th>
+	  <th>Ime</th>
+	  <th>Prezime</th>
+	  <th>Adresa</th>
+	  
+    </tr>
+  </thead>
 
-<p>
-  <strong>Prezime:</strong>
-  <%= @user.prezime %>
-</p>
+  <tbody>
+    <% for friendship in @user.friendships %>
+      <tr>
+        <td class="td1"><%= friendship.friend.email %></td>
+        <td class="td1"><%= friendship.friend.ime %></td>
+		<td class="td1"><%= friendship.friend.prezime %></td>
+		<td class="td1"><%= friendship.friend.adresa %></td>
+        <td class="tdeditkor"><%= link_to 'Remove', friendship, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>  
+    <% end %>
 
-<p>
-  <strong>Adresa:</strong>
-  <%= @user.adresa %>
-</p>
+  </tbody>
+  <tfoot>
+	<tr><td class="tdfoot"><%= link_to 'New Friendship', users_path %></td></tr>
+  </tfoot>
+</table>
+
+<table class="flat-table sortable">
+  <caption>Befriended me</caption>
+  <thead>
+    <tr>
+      <th>E-mail</th>
+	  <th>Ime</th>
+	  <th>Prezime</th>
+	  <th>Adresa</th>
+    </tr>
+  </thead>
+  <tbody>
+  <% for user in @user.inverse_friends %>
+   <tr>
+    <td class="td1"><%=user.email %></td>
+	<td class="td1"><%=user.ime%></td>
+	<td class="td1"><%=user.prezime%></td>
+	<td class="td1"><%=user.adresa%></td>
+   </tr>
+  <% end %>
+  </tbody>
+</table>

@@ -24,7 +24,8 @@ class RestaurantsController < ApplicationController
 	@restaurant = Restaurant.find(params[:id])
  
 	if @restaurant.update(restaurant_params)
-		redirect_to @restaurant
+		url = "http://localhost:3000/restaurants"
+		redirect_to url
 	else
 		render 'edit'
 	end
@@ -33,7 +34,7 @@ class RestaurantsController < ApplicationController
 	def create
     	@restaurant = Restaurant.new(restaurant_params)
 		if @restaurant.save
-
+			
 			redirect_to(:action => 'login')
 		else
 			flash[:notice] = "Form is invalid"

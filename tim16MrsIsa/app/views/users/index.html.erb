@@ -18,6 +18,8 @@
 	  <td class="td1"><%= users.prezime %></td>
 	  <td class="td1"><%= users.adresa %></td>
 	  <td class="tdeditkor"><%= link_to 'Edit', edit_user_path(users)%></td>
+	  <td class="tdeditresto"><%= link_to "Add Friend", friendships_path(:friend_id => users), :method => :post %></td>
+	  
     </tr>
 	
   <% end %>
@@ -31,6 +33,7 @@
     <%= submit_tag "Search", :ime => nil %>
 
 <% end %>
+
 
 
 

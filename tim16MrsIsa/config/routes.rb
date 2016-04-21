@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  get 'welcome/index'
   get 'sessions/login_attempt'
   get 'sessions/login'
   get 'sessions/home'
@@ -8,10 +9,12 @@ Rails.application.routes.draw do
   get 'sessions/signup'
   get 'welcome/index'
   get 'users/new'
+  get 'friendships/new'
   get 'restaurants/new'
 
   resources :users
   resources :restaurants
+  resources :friendships
 
   root 'welcome#index'
   
@@ -27,6 +30,7 @@ Rails.application.routes.draw do
   match '/profile', to: 'sessions#profile', via: 'get'
   match '/setting', to: 'sessions#setting', via: 'get'
   match '/home', to: 'sessions#home', via: 'get'
+
   
   # The priority is based upon order of creation:
   # first created -> highest priority.

@@ -7,5 +7,7 @@
 	<p class="profilparagraf">Prezime: <%=@current_user.prezime%><br></p>
 	<p class="profilparagraf">Adresa: <%=@current_user.adresa%><br></p>
 	<p class="profilparagrafEdit"><%= link_to 'Edituj Nalog', edit_user_path(@current_user)%>
+	<p class="profilparagrafEdit"><%= link_to 'Prijatelji', user_path(@current_user)%>
 	
 </div>
+

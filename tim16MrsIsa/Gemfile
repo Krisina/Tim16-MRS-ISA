@@ -1,5 +1,9 @@
 source 'https://rubygems.org'
 
+
+group :production do
+  gem 'pg'
+end
 gem 'jquery-turbolinks'
 gem 'has_friendship'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
