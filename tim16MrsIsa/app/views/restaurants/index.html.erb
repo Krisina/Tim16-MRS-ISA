@@ -1,0 +1,24 @@
+<table class="flat-table sortable">
+  <thead>
+  <tr class="tr1">
+    <th class="th1">Ime Restorana  </th>
+	<th class="th1">Udaljenist  </th>
+	<th class="th1">Rejting  </th>
+	<th class="th1">Prijatelji  </th>
+	<th class="th1">Rezervacija  </th>
+  </tr>
+  </thead>
+  
+  <tbody>
+  <% @restaurant.each do |restaurants| %>
+    <tr class="tr1">
+      <td class="td1"><%= restaurants.name %></td>
+	  <td class="td1"><%= restaurants.distance %></td>
+	  <td class="td1"><%= restaurants.rating %></td>
+	  <td class="td1"><%= restaurants.friends %></td>
+	  <td class="td1"><%= restaurants.reservation %></td>
+	  <td class="tdeditresto"><%= link_to 'Edit', edit_restaurant_path(restaurants)%></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>

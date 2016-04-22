@@ -1,0 +1,72 @@
+<style>
+
+</style>
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Restoran</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+
+<body class="header_body">
+
+	<div class="header">
+		<div class="container">
+			<div class="logo">
+				<h1 class="title"><%= image_tag("forkknife.png", size: "60x43") %>
+				Rezervisemo</h1>
+			</div>
+			<%unless session[:user_id]%>
+				<div class="nav">
+					<%= link_to :"Login" , :home, class: "nav_links" %> |
+					<%= link_to :"Korisnici" , :users, class: "nav_links"%> |
+					<%= link_to :"Restorani" , :restaurants, class: "nav_links"%>	
+									
+				</div>
+			<%else%>
+				<div class="nav">
+				<%= link_to :"Moj Nalog" , :home, class: "nav_links" %> |
+				<%= link_to :"Korisnici" , :users, class: "nav_links"%> |
+				<%= link_to :"Restorani" , :restaurants, class: "nav_links"%> |
+				
+				<div class="dropdown">
+					<span>Podesavanja</span>
+					<div class="dropdown-content">
+						<%= link_to :"Korisnici" , :users, class: "nav_links"%>
+						<br><%= link_to :"Restorani" , :restaurants, class: "nav_links"%>
+						<br><%= link_to :"Dodaj Restoran" , :setting, class: "nav_links" %>	
+					</div>
+				</div>
+				| <%= link_to :Logout , :logout, class: "nav_links" %>
+				<%= form_tag(users_path, :method => "get", id: "search-form") do %>
+					Korisnicka pretraga:
+					<%= text_field_tag :search, params[:search], placeholder: "Pretraga " %>
+					<%= submit_tag "Search"%>
+				<% end %>
+				
+			</div>
+			<%end%>
+		</div>
+	</div>
+
+
+	<% if flash[:color]== "valid" %>
+		<div class="valid_notice">
+			<p><%= flash[:notice]%></p>
+		</div>
+	<% elsif flash[:color]== "invalid"%>
+		<div class="invalid_notice">
+			<p><%=flash[:notice]%></p>
+		</div>
+	<%else%>
+		<div class="notice">
+			<p><%=flash[:notice]%></p>
+		</div>
+	<%end%>
+<%= yield %>
+
+</body>
+</html>

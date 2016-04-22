@@ -1,0 +1,23 @@
+<div class="register-form">
+	<div class="form">
+		<h1>Editovanje Naloga</h1>
+		<%= form_for :user, url: user_path(@user), method: :patch do |f| %>
+			<%= f.text_field :email, :placeholder => "e-mail"%>
+			<%= f.password_field :password, :placeholder => "password"%>
+			<%= f.password_field :password_confirmation, :placeholder => "password confirmation"%>
+			<%= f.text_field :ime, :placeholder => "ime"%>
+			<%= f.text_field :prezime, :placeholder => "prezime"%>
+			<%= f.text_field :adresa, :placeholder => "adresa"%>
+			<%= f.submit :"Edit" %>
+		<% end %>
+		
+		<% if @user.errors.any? %>
+			<div class="alert-box error"><span>error: </span>
+				<i class="fa fa-times-circle"></i>
+				<% for message_error in @user.errors.full_messages %>
+					<li><%= image_tag("error.png") %><%= message_error %></li>
+				<% end %>
+			</div>
+		<% end %>
+	</div>
+</div>

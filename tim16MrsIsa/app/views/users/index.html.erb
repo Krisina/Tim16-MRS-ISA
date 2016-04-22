@@ -1,0 +1,37 @@
+<table class="flat-table sortable">
+	
+  <thead>
+  <tr>
+    <th>E-mail</th>
+	<th>Ime</th>
+	<th>Prezime</th>
+	<th>Adresa</th>
+  </tr>
+  </thead>
+ 
+  <tbody>
+  <% @user.each do |users| %>
+	
+    <tr>
+      <td class="td1"><%= users.email %></td>
+	  <td class="td1"><%= users.ime %></td>
+	  <td class="td1"><%= users.prezime %></td>
+	  <td class="td1"><%= users.adresa %></td>
+	  <td class="tdeditkor"><%= link_to 'Edit', edit_user_path(users)%></td>
+	  <td class="tdeditresto"><%= link_to "Add Friend", friendships_path(:friend_id => users), :method => :post %></td>
+	  
+    </tr>
+	
+  <% end %>
+  </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
