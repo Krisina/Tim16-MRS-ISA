@@ -33,6 +33,8 @@ class UsersController < ApplicationController
  
 	if @user.update(user_params)
 		redirect_to(:controller => 'sessions', :action => 'login')
+		flash[:notice] = "Successfully edited."
+		flash[:color]= "valid"
 	else
 		render 'edit'
 	end

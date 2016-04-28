@@ -25,6 +25,7 @@ class SessionsController < ApplicationController
 		if authorized_user
 			session[:user_id] = authorized_user.id
 			flash[:notice] = "Welcome again, #{authorized_user.ime} #{authorized_user.prezime}!"
+			flash[:color]= "valid"
 			redirect_to(:action => 'home')
 
 

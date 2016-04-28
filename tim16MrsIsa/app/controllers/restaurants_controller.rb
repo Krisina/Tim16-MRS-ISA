@@ -24,8 +24,11 @@ class RestaurantsController < ApplicationController
 	@restaurant = Restaurant.find(params[:id])
  
 	if @restaurant.update(restaurant_params)
+	
 		url = "http://localhost:3000/restaurants"
 		redirect_to url
+		flash[:notice] = "Successfully edited."
+		flash[:color]= "valid"
 	else
 		render 'edit'
 	end

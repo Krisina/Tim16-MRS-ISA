@@ -30,6 +30,7 @@ class FriendshipsController < ApplicationController
      if# check_friend
 		@friendship.save
 		flash[:notice] = "The friend has been added."
+		flash[:color]= "valid"
 		redirect_to current_user
 		
     else
@@ -56,6 +57,7 @@ class FriendshipsController < ApplicationController
     @friendship = current_user.friendships.find(params[:id])
     @friendship.destroy
     flash[:notice] = "The friend has been removed."
+	flash[:color]= "valid"
     redirect_to current_user
   end
 
