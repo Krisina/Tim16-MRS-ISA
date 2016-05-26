@@ -1,0 +1,21 @@
+<div class="register-form">
+	<div class="form">
+		<h1 class = "h5">Editovanje Restorana</h1>
+		<%= form_for :restaurant, url: restaurant_path(@restaurant), method: :patch do |f| %>
+			<%= f.label :'Naziv Restorana:' %> <%= f.text_field :name, :placeholder => "ime restorana" %>
+			<%= f.label :'Adresa:' %> <%= f.text_field :distance, :placeholder => "adresa" %>
+			<%= f.label :'Rejting:' %> <%= f.text_field :rating, :placeholder => "rejting" %>
+			<%= f.label :'Rezervacija:' %> <%= f.text_field :reservation, :placeholder => "rezervacija" %>
+			<%= f.submit :"Edit" %>
+			<p class="message"><%= link_to 'Cancel', restaurant_path(@restaurant)%></p>
+		<% end %>
+		<% if @restaurant.errors.any? %>
+			<div class="alert-box error"><span>error: </span>
+				<i class="fa fa-times-circle"></i>
+				<% for message_error in @restaurant.errors.full_messages %>
+					<li><%= image_tag("error.png") %><%= message_error %></li>
+				<% end %>
+			</div>
+		<% end %>
+	</div>
+</div>

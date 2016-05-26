@@ -1,0 +1,87 @@
+<p class="comeon">Rezervacija</p>
+<table class="flat-tabler sortable">
+  
+  <thead>
+    <tr>
+      <th class="th1">User</th>
+	  <th class="th1">Name</th>
+      <th class="th1">Date</th>
+      <th class="th1">Time</th>
+      <th class="th1">Duration</th>
+      <th class="th1">Table</th>
+	  
+    </tr>
+  </thead>
+
+  <tbody>
+    <% for reservation in @user.reservations %>
+      <tr>
+        <td class="td1"><%= reservation.user_id %></td>
+		<td class="td1"><%= reservation.ResName %></td>
+        <td class="td1"><%= reservation.date %></td>
+        <td class="td1"><%= reservation.time %></td>
+        <td class="td1"><%= reservation.duration %></td>
+        <td class="td1"><%= reservation.table %></td>
+		<td class="tdeditrez"><%= link_to 'Edit', edit_reservation_path(reservation) %></td>
+		<td class="tdeditrez"><%= link_to 'Show', reservation %></td>
+        <td class="tdeditrez"><%= link_to 'Remove', reservation, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+		
+      </tr>  
+    <% end %>
+
+  </tbody>
+
+</table>
+
+<p class="comeon">Friend List</p>
+<table class="flat-tablef sortable">
+  
+  <thead>
+    <tr>
+      <th>E-mail</th>
+	  <th>Ime</th>
+	  <th>Prezime</th>
+	  <th>Adresa</th>
+	  
+    </tr>
+  </thead>
+
+  <tbody>
+    <% for friendship in @user.friendships %>
+      <tr>
+        <td class="td1"><%= friendship.friend.email %></td>
+        <td class="td1"><%= friendship.friend.ime %></td>
+		<td class="td1"><%= friendship.friend.prezime %></td>
+		<td class="td1"><%= friendship.friend.adresa %></td>
+        <td class="tdeditkor"><%= link_to 'Remove', friendship, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>  
+    <% end %>
+
+  </tbody>
+  <tfoot>
+	<tr><td class="tdfoot"><%= link_to 'New Friendship', users_path %></td></tr>
+  </tfoot>
+</table>
+
+<table class="flat-tableif sortable">
+  <thead>
+    <tr>
+      <th>E-mail</th>
+	  <th>Ime</th>
+	  <th>Prezime</th>
+	  <th>Adresa</th>
+    </tr>
+  </thead>
+  <tbody>
+  <% for user in @user.inverse_friends %>
+   <tr>
+    <td class="td1"><%=user.email %></td>
+	<td class="td1"><%=user.ime%></td>
+	<td class="td1"><%=user.prezime%></td>
+	<td class="td1"><%=user.adresa%></td>
+   </tr>
+  <% end %>
+  </tbody>
+</table>
+
+

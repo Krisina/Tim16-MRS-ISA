@@ -1,0 +1,31 @@
+<p class="comeon">Rezervacije</p>
+
+<table class="flat-tablesver sortable">
+  <thead>
+    <tr class="tr1">
+      <th class="th1">User</th>
+	  <th class="th1">Name</th>
+      <th class="th1">Date</th>
+      <th class="th1">Time</th>
+      <th class="th1">Duration</th>
+      <th class="th1">Table</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% for reservation in @reservations %>
+      <tr class="tr1">
+        <td class="td1"><%= reservation.user_id %></td>
+		<td class="td1"><%= reservation.ResName %></td>
+        <td class="td1"><%= reservation.date %></td>
+        <td class="td1"><%= reservation.time %></td>
+        <td class="td1"><%= reservation.duration %></td>
+        <td class="td1"><%= reservation.table %></td>
+		<td class="tdeditrez"><%= link_to 'Show', reservation %></td>
+        <td class="tdeditrez"><%= link_to 'Destroy', reservation, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>

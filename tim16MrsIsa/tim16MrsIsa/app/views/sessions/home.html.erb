@@ -1,0 +1,13 @@
+<div class="profilparagraf">
+	<div class="img">
+		<%= image_tag("Profile_avatar_placeholder_large.jpg", size: "150x150") %>
+	</div>
+	<p class="profilparagraf">E-mail: <%=@current_user.email%> <br></p>
+	<p class="profilparagraf">Ime: <%=@current_user.ime%><br></p>
+	<p class="profilparagraf">Prezime: <%=@current_user.prezime%><br></p>
+	<p class="profilparagraf">Adresa: <%=@current_user.adresa%><br></p>
+	<p class="profilparagrafEdit"><%= link_to 'Edituj Nalog', edit_user_path(@current_user)%>
+	<p class="profilparagrafEdit"><%= link_to 'Rezervacije i Prijatelji', user_path(@current_user)%>
+	
+</div>
+

@@ -1,0 +1,22 @@
+<div class="register-form">
+	<div class="form">
+		<h1 class = "h5">Editovanje Rezervacije</h1>
+		<%= form_for :reservation, url: reservation_path(@reservation), method: :patch do |f| %>
+			<%= f.select :ResName, ['Puno Mesa', 'Neka Pasta', 'Ispod Saca', 'Krkanluk']%>
+			<%= f.label :'Datum(xx/xx/xxxx):' %> <%= f.text_field :date, :placeholder => "datum" %>
+			<%= f.label :'Vreme (xx:xx):' %> <%= f.text_field :time, :placeholder => "vreme" %>
+			<%= f.label :'Trajanje (xx:xx):' %> <%= f.text_field :duration, :placeholder => "trajanje" %>
+			<%= f.label :'Broj Stola:' %> <%= f.text_field :table, :placeholder => "sto" %>
+			<%= f.submit :"Edit" %>
+			<p class="message"><%= link_to 'Cancel', reservation_path(@reservation)%></p>
+		<% end %>
+		<% if @reservation.errors.any? %>
+			<div class="alert-box error"><span>error: </span>
+				<i class="fa fa-times-circle"></i>
+				<% for message_error in @reservation.errors.full_messages %>
+					<li><%= image_tag("error.png") %><%= message_error %></li>
+				<% end %>
+			</div>
+		<% end %>
+	</div>
+</div>

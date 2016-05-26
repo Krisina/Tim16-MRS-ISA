@@ -1,0 +1,13 @@
+<div class="profilparagraf">
+	<div class="img">
+		<%= image_tag("ForkKnife.jpg", size: "150x150") %>
+	</div>
+	<p class="profilparagraf">Ime Restorana: <%=@reservation.ResName%><br></p>
+	<p class="profilparagraf">Datum: <%=@reservation.date%><br></p>
+	<p class="profilparagraf">Vreme: <%=@reservation.time%><br></p>
+	<p class="profilparagraf">Trajanje: <%=@reservation.duration%><br></p>
+	<p class="profilparagraf">Sto: <%=@reservation.table%><br></p>
+	<p class="profilparagrafEdit"><%= link_to 'Edit', edit_reservation_path(@reservation)%>
+	<p class="profilparagrafEdit"><%= link_to 'Back', reservations_path %>
+	
+</div>
