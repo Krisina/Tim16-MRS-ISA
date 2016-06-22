@@ -2,13 +2,14 @@
 	<div class="form">
 		<h1>Editovanje Naloga</h1>
 		<%= form_for :user, url: user_path(@user), method: :patch do |f| %>
-			<%= f.text_field :email, :placeholder => "e-mail"%>
-			<%= f.password_field :password, :placeholder => "password"%>
-			<%= f.password_field :password_confirmation, :placeholder => "password confirmation"%>
-			<%= f.text_field :ime, :placeholder => "ime"%>
-			<%= f.text_field :prezime, :placeholder => "prezime"%>
-			<%= f.text_field :adresa, :placeholder => "adresa"%>
+			<%= f.label :'E-Mail:' %> <%= f.text_field :email, :placeholder => "e-mail"%>
+			<%= f.label :'Lozinka:' %> <%= f.password_field :password, :placeholder => "password"%>
+			<%= f.label :'Ponovi Lozinku:' %><%= f.password_field :password_confirmation, :placeholder => "password confirmation"%>
+			<%= f.label :'Ime:' %> <%= f.text_field :ime, :placeholder => "ime"%>
+			<%= f.label :'Prezime:' %><%= f.text_field :prezime, :placeholder => "prezime"%>
+			<%= f.label :'Adresa:' %><%= f.text_field :adresa, :placeholder => "adresa"%>
 			<%= f.submit :"Edit" %>
+			<p class="message"><%= link_to 'Cancel', users_path(@user)%></p>
 		<% end %>
 		
 		<% if @user.errors.any? %>

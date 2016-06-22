@@ -43,7 +43,7 @@ class UsersController < ApplicationController
    def create
     	@user = User.new(user_params)
     	if @user.save
-
+				UserMailer.registration_confirmation(@user).deliver
 			    redirect_to(:controller => 'sessions', :action => 'login')
 				flash[:notice] = "Successful!"
 				flash[:color]= "valid"
@@ -53,6 +53,19 @@ class UsersController < ApplicationController
 			render "new"
 		end	
 		
+    end
+	
+	
+	def confirm_email
+    user = User.find_by_confirm_token(params[:id])
+    if user
+      user.email_activate
+      flash[:success] = "Dobrodosli u rezervisemo!"
+      redirect_to signin_url
+    else
+      flash[:error] = "Korisnik ne postoji"
+      redirect_to root_url
+    end	
     end
 	
 	#def destroy

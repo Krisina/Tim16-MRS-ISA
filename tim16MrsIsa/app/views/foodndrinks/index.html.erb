@@ -1,0 +1,25 @@
+<p class="comeon">Rezervacije</p>
+
+<table class="flat-tablesver sortable">
+  <thead>
+    <tr class="tr1">
+	  <th class="th1">Ime Restorana</th>
+	  <th class="th1">Hrana</th>
+      <th class="th1">Pice</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% for foodndrink in @foodndrinks %>
+      <tr class="tr1">
+	    <td class="td1"><%= foodndrink.ResName %></td>
+		<td class="td1"><%= foodndrink.food %></td>
+        <td class="td1"><%= foodndrink.drink %></td>
+		<td class="tdeditrez"><%= link_to 'Show', foodndrink %></td>
+        <td class="tdeditrez"><%= link_to 'Destroy', foodndrink, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>

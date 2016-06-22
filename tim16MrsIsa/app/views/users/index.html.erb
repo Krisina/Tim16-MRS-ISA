@@ -1,7 +1,9 @@
-<table class="flat-table sortable">
+<p class="comeon">Korisnici</p>
+
+<table class="flat-tablek sortable">
 	
   <thead>
-  <tr>
+  <tr class="pokusaj">
     <th>E-mail</th>
 	<th>Ime</th>
 	<th>Prezime</th>
@@ -12,13 +14,13 @@
   <tbody>
   <% @user.each do |users| %>
 	
-    <tr>
+    <tr class="pokusaj">
       <td class="td1"><%= users.email %></td>
 	  <td class="td1"><%= users.ime %></td>
 	  <td class="td1"><%= users.prezime %></td>
 	  <td class="td1"><%= users.adresa %></td>
-	  <td class="tdeditkor"><%= link_to 'Edit', edit_user_path(users)%></td>
-	  <td class="tdeditresto"><%= link_to "Add Friend", friendships_path(:friend_id => users), :method => :post %></td>
+	  <td class="tdeditresto"><%= link_to "Dodaj Prijatelja", friendships_path(:friend_id => users), :method => :post %></td>
+	  
 	  
     </tr>
 	

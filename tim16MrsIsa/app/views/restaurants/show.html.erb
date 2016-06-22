@@ -1,24 +1,11 @@
-<p>
-  <strong>Ime:</strong>
-  <%= @restaurant.name %>
-</p>
- 
-<p>
-  <strong>Razdaljina:</strong>
-  <%= @restaurant.distance %>
-</p>
-
-<p>
-  <strong>Rejting:</strong>
-  <%= @restaurant.rating %>
-</p>
-
-<p>
-  <strong>Prijatelji:</strong>
-  <%= @restaurant.friends %>
-</p>
-
-<p>
-  <strong>Rezervacija:</strong>
-  <%= @restaurant.reservation %>
-</p>
+<div class="profilparagraf">
+	<div class="img">
+		<%= image_tag("ForkKnife.jpg", size: "150x150") %>
+	</div>
+	<p class="profilparagraf">Ime: <%=@restaurant.name%><br></p>
+	<p class="profilparagraf">Adresa: <%=@restaurant.distance%><br></p>
+	<p class="profilparagraf">Rejting: <%=@restaurant.rating%><br></p>
+	<p class="profilparagraf">Rezervacija: <%=@restaurant.reservation%><br></p>
+	<p class="profilparagrafEdit"><%= link_to :"Rezervacija" , new_reservation_path(@current_user)%>
+	
+</div>

@@ -32,14 +32,6 @@
 				<%= link_to :"Korisnici" , :users, class: "nav_links"%> |
 				<%= link_to :"Restorani" , :restaurants, class: "nav_links"%> |
 				
-				<div class="dropdown">
-					<span>Podesavanja</span>
-					<div class="dropdown-content">
-						<%= link_to :"Korisnici" , :users, class: "nav_links"%>
-						<br><%= link_to :"Restorani" , :restaurants, class: "nav_links"%>
-						<br><%= link_to :"Dodaj Restoran" , :setting, class: "nav_links" %>	
-					</div>
-				</div>
 				| <%= link_to :Logout , :logout, class: "nav_links" %>
 				<%= form_tag(users_path, :method => "get", id: "search-form") do %>
 					Korisnicka pretraga:

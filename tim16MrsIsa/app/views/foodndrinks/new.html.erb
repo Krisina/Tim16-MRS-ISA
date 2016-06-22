@@ -1,0 +1,19 @@
+<div class="register-form" >
+	<div class="form">
+		<h1>Hrana i Pice</h1>
+		<%= form_for (@foodndrink) do |f| %>
+			<%= f.select :ResName, ['Puno Mesa', 'Neka Pasta', 'Ispod Saca', 'Krkanluk']%>
+			<%= f.select :food, ['Pizza', 'Spagete', 'Supa', 'Pasulj']%>
+			<%= f.select :drink, ['Voda', 'Sok', 'Kola', 'Vino', 'Pivo']%>
+			<%= f.submit :"Dodaj" %>
+		<% end %>
+		<% if @foodndrink.errors.any? %>
+			<div class="alert-box error"><span>error: </span>
+				<i class="fa fa-times-circle"></i>
+				<% for message_error in @foodndrink.errors.full_messages %>
+					<li><%= image_tag("error.png") %><%= message_error %></li>
+				<% end %>
+			</div>
+		<% end %>
+	</div>
+</div>

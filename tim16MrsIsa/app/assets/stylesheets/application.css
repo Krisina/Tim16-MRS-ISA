@@ -68,6 +68,17 @@
 		text-align: center;
 		box-shadow: 0 0 50px 0 rgba(0, 0, 0, 0.5), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
 	}
+
+	.form1 {
+		position: relative;
+		z-index: 1;
+		background: #ffffff;
+		max-width: 360px;
+		margin: 0 auto 100px;
+		padding: 45px;
+		text-align: center;
+		box-shadow: 0 0 50px 0 rgba(0, 0, 0, 0.5), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+	}
 	
 	.img {
 		margin: 10px;
@@ -122,6 +133,47 @@
 		font-family: "Roboto", sans-serif;
 		outline: 0;
 		background: #D0FFD0;
+		width: 60%;
+		border: 0;
+		margin: 0 0 15px;
+		padding: 15px;
+		box-sizing: border-box;
+		font-size: 14px;
+		
+	}
+	.form1 input {
+		font-family: "Roboto", sans-serif;
+		outline: 0;
+		background: #D0FFD0;
+		width: 100%;
+		border: 0;
+		margin: 0 0 15px;
+		padding: 15px;
+		box-sizing: border-box;
+		font-size: 14px;
+		
+	}
+
+	.form label {
+		font-family: "Roboto", sans-serif;
+		float: left;
+		outline: 0;
+		background: #FFFFFF;
+		width: 40%;
+		border: 0;
+		margin: 0 0 15px;
+		padding: 15px;
+		text-align: right;
+		display: block;
+		box-sizing: border-box;
+		font-size: 14px;
+		
+	}
+
+	.form select {
+		font-family: "Roboto", sans-serif;
+		outline: 0;
+		background: #D0FFD0;
 		width: 100%;
 		border: 0;
 		margin: 0 0 15px;
@@ -145,21 +197,139 @@
 		transition: all 0.3 ease;
 		cursor: pointer;
 	}
+
+	.form1 input[type=submit] {
+		font-family: "Roboto", sans-serif;
+		text-transform: uppercase;
+		outline: 0;
+		background: #4CAF50;
+		width: 100%;
+		border: 0;
+		padding: 15px;
+		color: #FFFFFF;
+		font-size: 14px;
+		-webkit-transition: all 0.3 ease;
+		transition: all 0.3 ease;
+		cursor: pointer;
+	}
 	
-	.flat-table {
+	.flat-tablek {
 		display: block;
 		font-family: "Roboto", sans-serif;
 		-webkit-font-smoothing: antialiased;
 		font-size: 115%;
 		overflow: auto;
-		width: auto;
 		background: #419B44;
 		position: relative;
-
-		max-width: auto;
+		max-width: 65%;
 		margin: 0 auto 100px;
 		padding: 45px;
-		text-align: center;
+		text-align: left;
+		box-shadow: 0 0 50px 0 rgba(0, 0, 0, 0.5), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+	}
+
+	.flat-tabler {
+		display: block;
+		font-family: "Roboto", sans-serif;
+		-webkit-font-smoothing: antialiased;
+		font-size: 115%;
+		overflow: auto;
+		background: #419B44;
+		position: relative;
+		max-width: 70%;
+		margin: 0 auto 100px;
+		padding: 45px;
+		text-align: left;
+		box-shadow: 0 0 50px 0 rgba(0, 0, 0, 0.5), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+	}
+	
+	.flat-tablefd {
+		display: block;
+		font-family: "Roboto", sans-serif;
+		-webkit-font-smoothing: antialiased;
+		font-size: 115%;
+		overflow: auto;
+		background: #419B44;
+		position: relative;
+		max-width: 33%;
+		margin: 0 auto 100px;
+		padding: 45px;
+		text-align: left;
+		box-shadow: 0 0 50px 0 rgba(0, 0, 0, 0.5), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+	}
+
+	.flat-tablef {
+		display: block;
+		font-family: "Roboto", sans-serif;
+		-webkit-font-smoothing: antialiased;
+		font-size: 115%;
+		overflow: auto;
+		background: #419B44;
+		position: relative;
+		max-width: 55%;
+		margin: 0 auto 100px;
+		padding: 45px;
+		text-align: left;
+		box-shadow: 0 0 50px 0 rgba(0, 0, 0, 0.5), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+	}
+	
+	.flat-tableif {
+		display: block;
+		font-family: "Roboto", sans-serif;
+		-webkit-font-smoothing: antialiased;
+		font-size: 115%;
+		overflow: auto;
+		background: #419B44;
+		position: relative;
+		max-width: 41%;
+		margin: 0 auto 100px;
+		padding: 45px;
+		text-align: left;
+		box-shadow: 0 0 50px 0 rgba(0, 0, 0, 0.5), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+	}
+
+	.flat-tableres {
+		display: block;
+		font-family: "Roboto", sans-serif;
+		-webkit-font-smoothing: antialiased;
+		font-size: 115%;
+		overflow: auto;
+		background: #419B44;
+		position: relative;
+		max-width: 50%;
+		margin: 0 auto 100px;
+		padding: 45px;
+		text-align: left;
+		box-shadow: 0 0 50px 0 rgba(0, 0, 0, 0.5), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+	}
+
+	.flat-tablesver {
+		display: block;
+		font-family: "Roboto", sans-serif;
+		-webkit-font-smoothing: antialiased;
+		font-size: 115%;
+		overflow: auto;
+		background: #419B44;
+		position: relative;
+		max-width: 63%;
+		margin: 0 auto 100px;
+		padding: 45px;
+		text-align: left;
+		box-shadow: 0 0 50px 0 rgba(0, 0, 0, 0.5), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+	}
+	
+	.flat-tablesvefd {
+		display: block;
+		font-family: "Roboto", sans-serif;
+		-webkit-font-smoothing: antialiased;
+		font-size: 115%;
+		overflow: auto;
+		background: #419B44;
+		position: relative;
+		max-width: 63%;
+		margin: 0 auto 100px;
+		padding: 45px;
+		text-align: left;
 		box-shadow: 0 0 50px 0 rgba(0, 0, 0, 0.5), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
 	}
 	
@@ -170,6 +340,7 @@
 		border-collapse: separate;
 		border-spacing: 5px 5px;
 		cursor: default;
+
 	}
 	
 	h1.title  {
@@ -179,6 +350,7 @@
 		padding: 10px 20px;
 		text-align: center;
 		margin: 0 auto;
+		
 	}
 	th {
 		background-color: rgb(112, 196, 105);
@@ -186,7 +358,20 @@
 		font-weight: normal;
 		padding: 20px 30px;
 		text-align: center;
+		
 	}
+	
+	p.comeon {
+		font-size: 115%;
+		font-family: "Roboto", sans-serif;
+		background-color: rgb(112, 196, 105);
+		color: white;
+		font-weight: normal;
+		padding: 20px 30px;
+		text-align: center;
+
+	}
+	
 	td.td1 {
 		background-color: rgb(238, 238, 238);
 		color: rgb(111, 111, 111);
@@ -196,6 +381,10 @@
 
 	
 	.form input[type=submit]:hover,.form button:active,.form button:focus {
+	background: #43A047;
+	}
+	
+	.form1 input[type=submit]:hover,.form button:active,.form button:focus {
 	background: #43A047;
 	}
 	
@@ -227,13 +416,28 @@
 		color: #666666;
 		font-size: 16px;
 	}
+	.form1 .message {
+		margin: 15px 0 0;
+		color: #666666;
+		font-size: 16px;
+	}
 		
 	.form .message a {
 		color: #4CAF50;
 		text-decoration: none;
 	}
+	.form1 .message a {
+		color: #4CAF50;
+		text-decoration: none;
+	}
 	
 	.form .register-form {
+		width: 360px;
+		padding: 8% 0 0;
+		margin: auto;
+	}
+	
+	.form1 .register-form {
 		width: 360px;
 		padding: 8% 0 0;
 		margin: auto;
@@ -360,6 +564,13 @@ a:active { color: white; text-decoration: none ;z-index: 1;}
 
 td.tdeditkor:nth-child(5) { background-color: rgb(112, 196, 105); padding: 20px 30px;}
 td.tdeditresto:nth-child(6) { background-color: rgb(112, 196, 105); padding: 20px 30px;}
+td.tdeditresto:nth-child(5) { background-color: rgb(112, 196, 105); padding: 20px 30px;}
+td.tdeditrez:nth-child(6) { background-color: rgb(112, 196, 105); padding: 20px 30px;}
+td.tdeditrez:nth-child(7) { background-color: rgb(112, 196, 105); padding: 20px 30px;}
+td.tdeditrez:nth-child(8) { background-color: rgb(112, 196, 105); padding: 20px 30px;}
+td.tdeditrez:nth-child(9) { background-color: rgb(112, 196, 105); padding: 20px 30px;}
+
+td.tdeditfd:nth-child(4) { background-color: rgb(112, 196, 105); padding: 20px 30px;}
 
 td.tdfoot{ 
 	background-color: rgb(112, 196, 105); 

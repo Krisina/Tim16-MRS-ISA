@@ -11,13 +11,33 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160421094846) do
+ActiveRecord::Schema.define(version: 20160622122847) do
+
+  create_table "foodndrinks", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "foodndrink_id"
+    t.string   "food"
+    t.string   "drink"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+  end
 
   create_table "friendships", force: :cascade do |t|
     t.integer  "user_id"
     t.integer  "friend_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "reservations", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "reservation_id"
+    t.string   "date"
+    t.string   "time"
+    t.string   "duration"
+    t.integer  "table"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
   end
 
   create_table "restaurants", force: :cascade do |t|
@@ -34,11 +54,13 @@ ActiveRecord::Schema.define(version: 20160421094846) do
     t.string   "email"
     t.string   "encrypted_password"
     t.string   "salt"
-    t.datetime "created_at",         null: false
-    t.datetime "updated_at",         null: false
+    t.datetime "created_at",                         null: false
+    t.datetime "updated_at",                         null: false
     t.string   "ime"
     t.string   "prezime"
     t.string   "adresa"
+    t.boolean  "email_confirmed",    default: false
+    t.string   "confirm_token"
   end
 
 end

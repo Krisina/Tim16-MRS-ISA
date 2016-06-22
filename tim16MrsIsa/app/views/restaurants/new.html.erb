@@ -2,11 +2,10 @@
 	<div class="form">
 		<h1>Restorani</h1>
 		<%= form_for (@restaurant) do |f| %>
-			<%= f.text_field :name, :placeholder => "ime restorana" %>
-			<%= f.text_field :distance, :placeholder => "udaljenost" %>
-			<%= f.text_field :rating, :placeholder => "rejting" %>
-			<%= f.text_field :friends, :placeholder => "prijatelji" %>
-			<%= f.text_field :reservation, :placeholder => "rezervacija" %>
+			<%= f.label :'Naziv Restorana:' %> <%= f.text_field :name, :placeholder => "ime restorana" %>
+			<%= f.label :'Adresa:' %> <%= f.text_field :distance, :placeholder => "adresa" %>
+			<%= f.label :'Rejting:' %> <%= f.text_field :rating, :placeholder => "rejting" %>
+			<%= f.label :'Rezervacija:' %> <%= f.text_field :reservation, :placeholder => "rezervacija" %>
 			<%= f.submit :"Dodaj" %>
 		<% end %>
 		<% if @restaurant.errors.any? %>

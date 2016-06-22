@@ -11,19 +11,30 @@ Rails.application.routes.draw do
   get 'users/new'
   get 'friendships/new'
   get 'restaurants/new'
+  get 'reservation/new'
+  get 'foodndrink/new'
 
   resources :users
   resources :restaurants
   resources :friendships
+  resources :reservations
+  resources :foodndrinks
+  
+  resources :users do
+    member do
+      get :confirm_email
+    end
+  end
 
   root 'welcome#index'
   
-
   post ':controller(/:action(/:id(.:format)))'
   get ':controller(/:action(/:id(.:format)))'
   match '/about', to: 'home#about', via: 'get'
   match '/signup', to: 'users#new', via: 'get'
   match '/addrestaurants', to: 'restaurants#new', via: 'get'
+  match '/addreservation', to: 'reservation#new', via: 'get'
+  match '/addfoodndrink', to: 'foodndrink#new', via: 'get'
   match '/login', to: 'sessions#login', via: 'get'
   match '/logout', to: 'sessions#logout', via: 'get'
   match '/main', to: 'sessions#main', via: 'get'

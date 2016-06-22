@@ -1,0 +1,2 @@
+module FoodndrinksHelper
+end

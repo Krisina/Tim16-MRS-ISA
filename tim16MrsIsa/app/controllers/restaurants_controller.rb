@@ -10,9 +10,7 @@ class RestaurantsController < ApplicationController
 	end
 	
   def show
-    redirect_to(:controller => 'sessions', :action => 'home')
-	flash[:notice] = "Successful"
-	flash[:color]= "valid"
+    @restaurant = Restaurant.find(params[:id])
   end
   
   def edit
@@ -25,8 +23,7 @@ class RestaurantsController < ApplicationController
  
 	if @restaurant.update(restaurant_params)
 	
-		url = "http://localhost:3000/restaurants"
-		redirect_to url
+		redirect_to restaurant_path
 		flash[:notice] = "Successfully edited."
 		flash[:color]= "valid"
 	else
@@ -36,15 +33,26 @@ class RestaurantsController < ApplicationController
   
 	def create
     	@restaurant = Restaurant.new(restaurant_params)
-		if @restaurant.save
-			
-			redirect_to(:action => 'login')
+		if 
+			@restaurant.save
+			flash[:notice] = "The restaurant has been added."
+			flash[:color]= "valid"
+			url = "http://localhost:3000/restaurants"
+			redirect_to url
 		else
 			flash[:notice] = "Form is invalid"
 			flash[:color]= "invalid"
 			render "new"
 		end	
 	end
+
+  #def destroy
+   # @restaurant = Restaurant.find(params[:id])
+   # @restaurant.destroy
+   # flash[:notice] = "The restaurant has been removed."
+   # flash[:color]= "valid"
+   # redirect_to restaurant_path
+  # end
 
 	private
 	def restaurant_params

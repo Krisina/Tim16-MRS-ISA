@@ -1,0 +1,29 @@
+<p class="comeon">Rezervacije</p>
+
+<table class="flat-tablesver sortable">
+  <thead>
+    <tr class="tr1">
+	  <th class="th1">Ime Restorana</th>
+      <th class="th1">Datum</th>
+      <th class="th1">Vreme</th>
+      <th class="th1">Trajanje</th>
+      <th class="th1">Sto</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% for reservation in @reservations %>
+      <tr class="tr1">
+		<td class="td1"><%= reservation.try(:ResName) %></td>
+        <td class="td1"><%= reservation.date %></td>
+        <td class="td1"><%= reservation.time %></td>
+        <td class="td1"><%= reservation.duration %></td>
+        <td class="td1"><%= reservation.table %></td>
+		<td class="tdeditrez"><%= link_to 'Prikazi', reservation %></td>
+        <td class="tdeditrez"><%= link_to 'Obrisi', reservation, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>

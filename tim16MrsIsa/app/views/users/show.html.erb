@@ -1,5 +1,69 @@
-<table class="flat-table sortable">
-	 <caption>Friend List</caption>
+<p class="comeon">Rezervacija</p>
+<table class="flat-tabler sortable">
+  
+  <thead>
+    <tr>
+	  <th class="th1">Naziv restorana</th>
+      <th class="th1">Datum</th>
+      <th class="th1">Vreme</th>
+      <th class="th1">Trajanje</th>
+      <th class="th1">Sto</th>
+	  
+    </tr>
+  </thead>
+
+  <tbody>
+    <% for reservation in @user.reservations %>
+      <tr>
+		<td class="td1"><%= reservation.ResName %></td>
+        <td class="td1"><%= reservation.date %></td>
+        <td class="td1"><%= reservation.time %></td>
+        <td class="td1"><%= reservation.duration %></td>
+        <td class="td1"><%= reservation.table %></td>
+		<td class="tdeditrez"><%= link_to 'Prikaz', reservation %></td>
+        <td class="tdeditrez"><%= link_to 'Otkazi', reservation, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+		<td class="tdeditrez"><%= link_to :"Rezervisi hranu i pice" , new_foodndrink_path(@current_user)%></td>	
+		
+      </tr>  
+    <% end %>
+
+  </tbody>
+  <tfoot>
+	<tr><td class="tdfoot"><%= link_to 'Dodaj novu rezervaciju', new_reservation_path %></td></tr>
+  </tfoot>
+</table>
+
+<p class="comeon">Rezervisana Hrana i Pice</p>
+<table class="flat-tablefd sortable">
+  
+  <thead>
+    <tr>
+	  <th class="th1">Naziv restorana</th>
+	  <th class="th1">Hrana</th>
+      <th class="th1">Pice</th>
+	  
+    </tr>
+  </thead>
+
+  <tbody>
+    <% for foodndrink in @user.foodndrinks %>
+      <tr>
+	    <td class="td1"><%= foodndrink.ResName %></td>
+		<td class="td1"><%= foodndrink.food %></td>
+        <td class="td1"><%= foodndrink.drink %></td>
+        <td class="tdeditfd"><%= link_to 'Otkazi', foodndrink, method: :delete, data: { confirm: 'Are you sure?' } %></td>		
+		
+      </tr>  
+    <% end %>
+
+  </tbody>
+
+
+</table>
+
+<p class="comeon">Friend List</p>
+<table class="flat-tablef sortable">
+  
   <thead>
     <tr>
       <th>E-mail</th>
@@ -17,17 +81,17 @@
         <td class="td1"><%= friendship.friend.ime %></td>
 		<td class="td1"><%= friendship.friend.prezime %></td>
 		<td class="td1"><%= friendship.friend.adresa %></td>
-        <td class="tdeditkor"><%= link_to 'Remove', friendship, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td class="tdeditkor"><%= link_to 'Obrisi', friendship, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>  
     <% end %>
 
   </tbody>
   <tfoot>
-	<tr><td class="tdfoot"><%= link_to 'New Friendship', users_path %></td></tr>
+	<tr><td class="tdfoot"><%= link_to 'Dodaj novog prijatelja', users_path %></td></tr>
   </tfoot>
 </table>
 
-<table class="flat-table sortable">
+<table class="flat-tableif sortable">
   <thead>
     <tr>
       <th>E-mail</th>
@@ -47,3 +111,5 @@
   <% end %>
   </tbody>
 </table>
+
+
